@@ -10,19 +10,25 @@
 
 (function showMenu() {
   const menuIcon = document.querySelector(".menu-icon");
+  const menuItems = document.querySelector(".menu-items");
+  const mainContent = document.querySelector("section");
+  const body = document.querySelector("body");
 
   menuIcon.addEventListener("click", () => {
-    console.log(menuIcon.src);
-    if (menuIcon.src === "http://../graphics/menu-icon.svg") {
-      menuIcon.src = "http://../graphics/close-icon.svg";
+    menuItems.classList.toggle("hidden");
+    mainContent.classList.toggle("hidden");
+
+    if (menuIcon.alt === "menu") {
+      menuIcon.src = "/graphics/close-icon.svg";
+      menuIcon.alt = "close";
+      body.style.backgroundColor = "var(--background-blue)";
     } else {
-      menuIcon.src = "http://../graphics/menu-icon.svg";
+      menuIcon.src = "/graphics/menu-icon.svg";
+      menuIcon.alt = "menu";
+      body.style.backgroundColor = "transparent";
     }
   });
 
-  const menuItems = document.querySelector(".menu-items");
-
-  menuItems.classList.toggle("hidden");
   // menuIcon.src = "/graphics/close.svg";
 
   // if (menuIcon.textContent === "arrow_drop_down") {
