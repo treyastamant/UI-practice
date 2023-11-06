@@ -4,6 +4,11 @@
   dropDown.forEach((e) => {
     e.addEventListener("click", () => {
       e.classList.toggle("show");
+      if (e.children[0].children[0].textContent === "arrow_drop_down") {
+        e.children[0].children[0].textContent = "arrow_drop_up";
+      } else {
+        e.children[0].children[0].textContent = "arrow_drop_down";
+      }
     });
   });
 })();
@@ -29,11 +34,9 @@
     }
   });
 
-  // menuIcon.src = "/graphics/close.svg";
-
-  // if (menuIcon.textContent === "arrow_drop_down") {
-  //   menuIcon.textContent = "arrow_drop_up";
-  // } else {
-  //   menuIcon.textContent = "arrow_drop_down";
-  // }
+  if (menuIcon.textContent === "arrow_drop_down") {
+    menuIcon.textContent = "arrow_drop_up";
+  } else {
+    menuIcon.textContent = "arrow_drop_down";
+  }
 })();
