@@ -183,10 +183,15 @@ section div img {
   .image {
     height: 300px;
     margin: 0px;
+    transition: transform 0.2s;
   }
 
   .image:nth-of-type(even) {
     margin-top: 80px;
+  }
+
+  .image:hover {
+    transform: scale(1.1);
   }
 }
 
